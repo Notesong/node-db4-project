@@ -16,9 +16,9 @@ function findById(id) {
   return db("recipes").where({ id }).first();
 }
 
-function add(scheme) {
+function add(recipe) {
   return db("recipes")
-    .insert(scheme, "id")
+    .insert(recipe, "id")
     .then((ids) => {
       const id = ids[0];
       return findById(id);
